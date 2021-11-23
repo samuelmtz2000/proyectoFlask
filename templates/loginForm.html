@@ -1,0 +1,37 @@
+<!---Formulario-->
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="padding-bottom: 205px;">
+ <div class="row">
+  <div class="col"></div>
+  <div class="col">
+   <form method="POST" action"/">
+    <div class="card" style="width: 38rem; background-color: rgba(255, 255, 255, 0.44); border-style: none;">
+     <div class="card-body">
+      <p class="card-text">
+     <div class="mb-3" style="color: white;">
+      <label for="txtCorreo" class="form-label">Correo</label>
+      <input type="text" class="form-control" id="txtCorreo" name="correo" placeholder="example@hotmail.com">
+     </div>
+     <div class="mb-3" style="color:white;">
+      <label for="txtContraseña" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="txtContraseña" name ="contraseña" placeholder="Password">
+     </div>
+     <br>
+     <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="submit" style="background-color:rgb(187, 130, 175); border-style: none;">Ir</button>
+     </div>
+     </p>
+     <div style="text-align:center;">
+      <a href="contraseña.html" class="card-link" style="color: darkorchid;">Olvidé mi contraseña |</a>
+      <a href="registro.html" class="card-link" style="color: darkorchid;">Registrarme</a>
+    </div>
+    </div>
+   </div>
+  </form>
+  </div>
+  <div class="col"></div>
+ </div>
+</div>
+{% endblock %}
+     
