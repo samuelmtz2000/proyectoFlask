@@ -1,6 +1,8 @@
 <!---Formulario-->
 {% extends "base.html" %}
 {% block content %}
+{% from "_macros.html" import inpunt_nuevo%}
+
 <div class="container" style="padding-bottom: 205px;">
  <div class="row">
   <div class="col"></div>
@@ -10,12 +12,10 @@
      <div class="card-body">
       <p class="card-text">
      <div class="mb-3" style="color: white;">
-      <label for="txtCorreo" class="form-label">Correo</label>
-      <input type="text" class="form-control" id="txtCorreo" name="correo" placeholder="example@hotmail.com">
+        {{inpunt_nuevo(form.usuario, class='form-control')}}
      </div>
      <div class="mb-3" style="color:white;">
-      <label for="txtContraseña" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="txtContraseña" name ="contraseña" placeholder="Password">
+        {{inpunt_nuevo(form.contrasenia, class='form-control')}}
      </div>
      <br>
      <div class="d-grid gap-2 col-6 mx-auto">
@@ -23,8 +23,7 @@
      </div>
      </p>
      <div style="text-align:center;">
-      <a href="contraseña.html" class="card-link" style="color: darkorchid;">Olvidé mi contraseña |</a>
-      <a href="registro.html" class="card-link" style="color: darkorchid;">Registrarme</a>
+      <a href="registro" class="card-link" style="color: darkorchid; text-decoration: none;">Registrarme</a>
     </div>
     </div>
    </div>

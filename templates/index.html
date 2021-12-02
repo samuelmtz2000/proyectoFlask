@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block titulo %} Index {% endblock %}
 {% block content %}
- <H1>Hola mundo</H1>
+<div class="d-flex w-auto justify-content-center ">
+ <H1>Hola {{user.nombre}}, Bienvenido</H1>
+</div>
+<div class="d-flex w-auto justify-content-center ">
+ <form action="/cerrar_session">
+  <button class="btn btn-primary btn-pill w-100" type="submit" method="POST">Cerrar session</button>
+ </form>
+</div>
 {% endblock %}

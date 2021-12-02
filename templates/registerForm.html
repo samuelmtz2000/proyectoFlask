@@ -1,0 +1,43 @@
+<!---Formulario-->
+{% extends "base.html" %}
+{% block content %}
+{% from "_macros.html" import inpunt_nuevo%}
+
+<div class="container" style="padding-bottom: 65px;">
+ <div class="row d-flex justify-content-center" style="width: 100%;">
+  <div class="w-auto">
+   <div class="card" style="width: 38rem; background-color: rgba(255, 255, 255, 0.44); border-style: none;">
+    <div class="card-body">
+
+     <div class="card-text">
+      <form action="/registro" method="POST">
+
+       <div class="mb-3" style="color: white;">
+        {{inpunt_nuevo(form.nombre, class='form-control')}}
+       <div class="mb-3" style="color: white;">
+        {{inpunt_nuevo(form.usuario, class='form-control')}}
+       </div>
+       <div class="mb-3" style="color: white;">
+        {{inpunt_nuevo(form.correo, class='form-control')}}
+       </div>
+       <div class="mb-3" style="color:white;">
+        {{inpunt_nuevo(form.contrasenia, class='form-control')}}
+       </div>
+       <br>
+       <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit"
+        style="background-color:rgb(187, 130, 175); border-style: none;">Ir</button>
+       </div>
+      </form>
+
+     </div>
+     <div style="text-align:center;">
+      <a href="/" class="card-link" style="color: darkorchid; text-decoration: none;">Login</a>
+     </div>
+
+    </div>
+   </div>
+  </div>
+  </div>
+ </div>
+ {% endblock %}

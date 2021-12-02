@@ -17,4 +17,4 @@ SQLAlchemy==1.4.27
 toml==0.10.2
 visitor==0.1.3
 Werkzeug==2.0.2
-WTForms==3.0.0
+WTForms==2.3.3
