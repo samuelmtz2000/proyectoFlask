@@ -5,12 +5,11 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from config import DevelopmentConfig
 from flask_wtf.csrf import CSRFProtect
-import forms
 from sqlalchemy import text
-import models
-# from models import db
 from models import User, db
-import win32api
+import pyautogui as pag
+import forms
+import models
 
 
 app = Flask(__name__)
@@ -31,6 +30,11 @@ def Login():
             User.username == us).filter(User.contrasenia == contrasenia).first()
         if user is not None:
             return render_template("index.html", user=user)
+        else:
+            print("Error de inicio de session")
+            pag.alert(text="Error de inicio de session",
+                      title="Error")
+
     return render_template("loginForm.html", form=create_form)
 
 
@@ -50,7 +54,7 @@ def Register():
             return redirect("/")
         except:
             print("problema al insertar")
-            win32api.MessageBox(0, 'Error al insertar', 'error')
+            pag.alert(text="Error al insertar", title="Error")
 
     return(render_template("registerForm.html", form=create_form))
 
@@ -58,7 +62,7 @@ def Register():
 @app.route("/cerrar_session", methods=["POST", "GET"])
 def CerrarSession():
     create_form = forms.LoginForm()
-    return render_template("loginForm.html", form=create_form)
+    return redirect("/")
 
 
 if __name__ == "__main__":
